@@ -1,679 +1,921 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#4A0E17">
+<title>Mira Classic Empire | Perfume Store</title>
 
-  <title>Mira Classic Empire | Redefining Your Boundless Beauty</title>
+<style>
+/* ==================================================
+   MIRA CLASSIC EMPIRE
+   EDIT COLORS HERE
+================================================== */
+:root {
+  --burgundy: #4A0E17;
+  --violet: #261732;
+  --sage: #AEA989;
+  --cream: #FAF6F0;
+  --white: #FFFFFF;
+  --text: #302329;
+}
 
-  <meta name="description" content="Discover your signature scent with Mira Classic Empire. Explore fragrances that express your individuality, beauty, and confidence.">
+/* BASIC STYLES */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
-  <meta name="theme-color" content="#261732">
+html {
+  scroll-behavior: smooth;
+}
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+body {
+  font-family: Arial, sans-serif;
+  background: var(--cream);
+  color: var(--text);
+  line-height: 1.6;
+}
 
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+img {
+  display: block;
+  width: 100%;
+  object-fit: cover;
+}
 
-  <link rel="stylesheet" href="style.css">
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+button {
+  font: inherit;
+  cursor: pointer;
+}
+
+.container {
+  width: 90%;
+  max-width: 1150px;
+  margin: auto;
+}
+
+.section {
+  padding: 65px 0;
+}
+
+.section-heading {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.section-heading small {
+  color: var(--burgundy);
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  font-size: 11px;
+  font-weight: bold;
+}
+
+.section-heading h2 {
+  font-family: Georgia, serif;
+  font-size: clamp(27px, 5vw, 40px);
+  color: var(--burgundy);
+  margin-top: 7px;
+  font-weight: normal;
+}
+
+.section-heading p {
+  font-size: 13px;
+  margin-top: 8px;
+  opacity: .75;
+}
+
+/* HEADER */
+header {
+  background: var(--cream);
+  border-bottom: 1px solid #e8dcd8;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.navbar {
+  min-height: 76px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 15px;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.brand img {
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  object-fit: contain;
+}
+
+.brand-name {
+  color: var(--burgundy);
+  font-family: Georgia, serif;
+  font-size: 18px;
+  line-height: 1.2;
+}
+
+.brand-name span {
+  display: block;
+  font-family: Arial, sans-serif;
+  font-size: 9px;
+  letter-spacing: 2px;
+  margin-top: 4px;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 22px;
+  font-size: 12px;
+}
+
+.nav-links a:hover {
+  color: var(--burgundy);
+}
+
+.nav-order {
+  background: var(--burgundy);
+  color: white;
+  padding: 11px 16px;
+  border-radius: 3px;
+}
+
+/* HERO */
+.hero {
+  min-height: 490px;
+  display: flex;
+  align-items: center;
+  background:
+    linear-gradient(90deg, rgba(30, 10, 17, .85), rgba(30, 10, 17, .28)),
+    url("assets/mira-background.webp") center/cover no-repeat;
+  color: white;
+}
+
+.hero-content {
+  max-width: 600px;
+  padding: 70px 0;
+}
+
+.hero-label {
+  color: #e2c7a3;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  font-size: 11px;
+}
+
+.hero h1 {
+  font-family: Georgia, serif;
+  font-weight: normal;
+  font-size: clamp(40px, 8vw, 68px);
+  line-height: 1.1;
+  margin: 20px 0;
+}
+
+.hero h1 em {
+  color: #e2c7a3;
+}
+
+.hero p {
+  max-width: 390px;
+  font-size: 14px;
+  color: #f4e9e6;
+  margin-bottom: 27px;
+}
+
+.button {
+  display: inline-block;
+  padding: 13px 22px;
+  border-radius: 3px;
+  background: var(--burgundy);
+  color: white;
+  font-size: 12px;
+  border: 1px solid var(--burgundy);
+  transition: .25s;
+}
+
+.button:hover {
+  background: var(--violet);
+  border-color: var(--violet);
+  transform: translateY(-2px);
+}
+
+.button-light {
+  background: transparent;
+  border-color: #e2c7a3;
+  margin-left: 8px;
+}
+
+/* ANNOUNCEMENT STRIP */
+.quote-strip {
+  background: var(--burgundy);
+  color: white;
+  text-align: center;
+  padding: 15px 10px;
+  font-family: Georgia, serif;
+  font-size: 15px;
+  letter-spacing: .5px;
+}
+
+/* FEATURED COLLECTION */
+.featured-track {
+  display: flex;
+  gap: 16px;
+  overflow-x: auto;
+  padding: 5px 0 18px;
+  scrollbar-width: thin;
+  scrollbar-color: var(--sage) transparent;
+}
+
+.featured-item {
+  flex: 0 0 170px;
+  text-align: center;
+}
+
+.featured-item img {
+  height: 190px;
+  border-radius: 5px;
+  background: #eee5df;
+  object-fit: cover;
+}
+
+.featured-item p {
+  font-family: Georgia, serif;
+  color: var(--burgundy);
+  font-size: 14px;
+  margin-top: 10px;
+}
+
+/* PRODUCT CATALOG */
+.products {
+  background: #fffdf9;
+}
+
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 20px;
+}
+
+.product-card {
+  background: white;
+  border: 1px solid #eee5df;
+  border-radius: 5px;
+  overflow: hidden;
+  transition: .25s;
+}
+
+.product-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 25px #4a0e1710;
+}
+
+.product-card img {
+  height: 220px;
+  background: #f0e8e2;
+  object-fit: cover;
+}
+
+.product-info {
+  padding: 14px;
+}
+
+.product-info h3 {
+  color: var(--burgundy);
+  font-family: Georgia, serif;
+  font-size: 16px;
+  font-weight: normal;
+}
+
+.product-info p {
+  font-size: 11px;
+  opacity: .7;
+  margin: 5px 0 12px;
+}
+
+.order-button {
+  display: block;
+  text-align: center;
+  background: var(--burgundy);
+  color: white;
+  border-radius: 3px;
+  padding: 10px;
+  font-size: 11px;
+}
+
+.order-button:hover {
+  background: var(--violet);
+}
+
+/* QUOTES */
+.quotes {
+  background: #f0e8e2;
+}
+
+.quote-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+}
+
+.quote-card {
+  background: var(--cream);
+  border: 1px solid #e6d9d1;
+  padding: 27px 20px;
+  text-align: center;
+  border-radius: 4px;
+}
+
+.quote-card span {
+  color: var(--sage);
+  font-size: 30px;
+  font-family: Georgia, serif;
+}
+
+.quote-card p {
+  color: var(--burgundy);
+  font-family: Georgia, serif;
+  font-size: 17px;
+  margin-top: 8px;
+}
+
+/* ABOUT */
+.about-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: 40px;
+}
+
+.about-image {
+  height: 330px;
+  object-fit: cover;
+  border-radius: 4px;
+  background: #eee5df;
+}
+
+.about-text small {
+  color: var(--burgundy);
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  font-size: 11px;
+}
+
+.about-text h2 {
+  font-family: Georgia, serif;
+  font-weight: normal;
+  font-size: 34px;
+  color: var(--burgundy);
+  line-height: 1.2;
+  margin: 12px 0 18px;
+}
+
+.about-text p {
+  font-size: 13px;
+  margin-bottom: 20px;
+  opacity: .8;
+}
+
+/* FINAL CALL TO ACTION */
+.final-cta {
+  background: var(--burgundy);
+  color: white;
+  text-align: center;
+  padding: 55px 20px;
+}
+
+.final-cta h2 {
+  font-family: Georgia, serif;
+  font-size: clamp(28px, 5vw, 40px);
+  font-weight: normal;
+}
+
+.final-cta p {
+  font-size: 13px;
+  margin: 12px 0 23px;
+  color: #eadde0;
+}
+
+.final-cta .button {
+  background: var(--cream);
+  color: var(--burgundy);
+  border-color: var(--cream);
+}
+
+/* FOOTER */
+footer {
+  background: #211017;
+  color: #e8d9d8;
+  padding: 30px 0;
+  text-align: center;
+  font-size: 11px;
+}
+
+footer strong {
+  display: block;
+  font-family: Georgia, serif;
+  font-size: 19px;
+  font-weight: normal;
+  margin-bottom: 5px;
+}
+
+footer p {
+  margin-top: 7px;
+  opacity: .75;
+}
+
+/* WHATSAPP FLOATING BUTTON */
+.whatsapp-float {
+  position: fixed;
+  right: 18px;
+  bottom: 18px;
+  z-index: 99;
+  background: #247b48;
+  color: white;
+  padding: 13px 17px;
+  border-radius: 30px;
+  font-size: 12px;
+  box-shadow: 0 4px 18px #0002;
+}
+
+/* MOBILE */
+@media (max-width: 800px) {
+  .product-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+  }
+
+  .product-card img {
+    height: 190px;
+  }
+
+  .about-content {
+    gap: 24px;
+  }
+
+  .nav-links {
+    gap: 12px;
+  }
+
+  .nav-links a:not(.nav-order) {
+    display: none;
+  }
+}
+
+@media (max-width: 500px) {
+  .section {
+    padding: 48px 0;
+  }
+
+  .navbar {
+    min-height: 66px;
+  }
+
+  .brand img {
+    width: 38px;
+    height: 38px;
+  }
+
+  .brand-name {
+    font-size: 15px;
+  }
+
+  .nav-order {
+    padding: 10px 12px;
+    font-size: 11px;
+  }
+
+  .hero {
+    min-height: 430px;
+    background-position: 60% center;
+  }
+
+  .hero-content {
+    padding: 55px 0;
+  }
+
+  .hero h1 {
+    font-size: 43px;
+  }
+
+  .hero p {
+    font-size: 13px;
+  }
+
+  .button {
+    padding: 12px 15px;
+  }
+
+  .featured-item {
+    flex-basis: 145px;
+  }
+
+  .featured-item img {
+    height: 165px;
+  }
+
+  .product-card img {
+    height: 165px;
+  }
+
+  .product-info {
+    padding: 11px;
+  }
+
+  .product-info h3 {
+    font-size: 14px;
+  }
+
+  .quote-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .quote-card {
+    padding: 20px;
+  }
+
+  .about-content {
+    grid-template-columns: 1fr;
+  }
+
+  .about-image {
+    height: 260px;
+  }
+
+  .about-text h2 {
+    font-size: 30px;
+  }
+}
+</style>
 </head>
 
 <body>
 
-  <!-- ==================================================
-       SECTION 01: ANNOUNCEMENT BAR
-       EDIT: Change the promotional message below.
-  =================================================== -->
-
-  <div class="announcement-bar">
-    <p>YOUR NEXT SIGNATURE SCENT AWAITS YOU</p>
-  </div>
-
-
-  <!-- ==================================================
-       SECTION 02: NAVIGATION
-       EDIT: Brand name and navigation labels.
-  =================================================== -->
-
-  <header class="site-header" id="home">
-
-    <a href="#home" class="brand" aria-label="Mira Classic Empire home">
+<!-- ==================================================
+     HEADER
+     EDIT BRAND NAME OR LOGO HERE
+================================================== -->
+<header>
+  <div class="container navbar">
+    <a href="#" class="brand">
       <img src="assets/logo.webp" alt="Mira Classic Empire logo">
-      <span class="brand-fallback">MIRA <span>CLASSIC EMPIRE</span></span>
+      <div class="brand-name">
+        Mira Classic Empire
+        <span>FRAGRANCE • ELEGANCE • YOU</span>
+      </div>
     </a>
 
-    <button class="menu-toggle" id="menuToggle"
-      aria-label="Open navigation"
-      aria-expanded="false"
-      aria-controls="mainNav">
-      <span></span>
-      <span></span>
-    </button>
-
-    <nav class="main-nav" id="mainNav">
+    <nav class="nav-links">
       <a href="#home">Home</a>
-      <a href="#collections">Collections</a>
-      <a href="#fragrances">Fragrances</a>
-      <a href="#our-story">Our Story</a>
-      <a href="#contact">Contact</a>
+      <a href="#collection">Collection</a>
+      <a href="#about">About</a>
+      <a class="nav-order" href="#collection">Shop Perfumes</a>
     </nav>
-
-    <a href="#" class="header-cta whatsapp-link">
-      <span>Shop Now</span>
-      <span aria-hidden="true">↗</span>
-    </a>
-
-  </header>
-
-
-  <main>
-
-    <!-- ==================================================
-         SECTION 03: HERO
-         EDIT: Headline, description, and button labels.
-         BACKGROUND: assets/mira-background.webp
-    =================================================== -->
-
-    <section class="hero">
-
-      <div class="hero-overlay"></div>
-
-      <div class="hero-content">
-
-        <span class="eyebrow hero-eyebrow">
-          THE ART OF PERSONAL FRAGRANCE
-        </span>
-
-        <h1>
-          Your Scent.<br>
-          <em>Your Signature.</em>
-        </h1>
-
-        <p class="hero-description">
-          Discover fragrances that complement your presence,
-          awaken your confidence, and leave an unforgettable impression.
-        </p>
-
-        <p class="hero-slogan">
-          Redefining Your Boundless Beauty.
-        </p>
-
-        <div class="hero-actions">
-          <a href="#fragrances" class="button button-primary">
-            Explore Fragrances <span>↗</span>
-          </a>
-
-          <a href="#our-story" class="button button-outline">
-            Discover Our World
-          </a>
-        </div>
-
-      </div>
-
-      <div class="hero-bottom">
-        <span>SCENT IS YOUR SIGNATURE</span>
-        <span class="hero-scroll">SCROLL TO DISCOVER ↓</span>
-      </div>
-
-      <div class="hero-index">01 / 04</div>
-
-    </section>
-
-
-    <!-- ==================================================
-         SECTION 04: BRAND MARQUEE
-         EDIT: Change or add fragrance statements.
-    =================================================== -->
-
-    <section class="marquee-section" aria-label="Brand philosophy">
-
-      <div class="marquee-track">
-
-        <div class="marquee-group">
-          <span>WEAR YOUR CONFIDENCE</span><i>✳</i>
-          <span>SCENT IS YOUR SIGNATURE</span><i>✳</i>
-          <span>BE BEAUTIFULLY UNFORGETTABLE</span><i>✳</i>
-          <span>YOUR FRAGRANCE, YOUR STORY</span><i>✳</i>
-        </div>
-
-        <div class="marquee-group" aria-hidden="true">
-          <span>WEAR YOUR CONFIDENCE</span><i>✳</i>
-          <span>SCENT IS YOUR SIGNATURE</span><i>✳</i>
-          <span>BE BEAUTIFULLY UNFORGETTABLE</span><i>✳</i>
-          <span>YOUR FRAGRANCE, YOUR STORY</span><i>✳</i>
-        </div>
-
-      </div>
-
-    </section>
-
-
-    <!-- ==================================================
-         SECTION 05: INTRODUCTION
-    =================================================== -->
-
-    <section class="intro-section section-padding">
-
-      <div class="section-label">
-        <span>01</span>
-        <span>THE MIRA EXPERIENCE</span>
-      </div>
-
-      <div class="intro-grid">
-
-        <div class="intro-heading">
-          <span class="eyebrow">BEYOND THE ORDINARY</span>
-
-          <h2>
-            More than a fragrance.<br>
-            <em>A feeling.</em>
-          </h2>
-        </div>
-
-        <div class="intro-copy">
-
-          <p>
-            Some things are remembered long after the moment has passed.
-            A familiar scent. An unforgettable presence. A feeling that
-            returns without warning.
-          </p>
-
-          <p>
-            At Mira Classic Empire, fragrance is an expression of
-            individuality. Discover scents that complement your style
-            and make every moment distinctly yours.
-          </p>
-
-          <a href="#collections" class="text-link">
-            Discover our collections <span>↗</span>
-          </a>
-
-        </div>
-
-      </div>
-
-      <div class="intro-decoration" aria-hidden="true">M</div>
-
-    </section>
-
-
-    <!-- ==================================================
-         SECTION 06: COLLECTIONS
-         EDIT: Collection descriptions and category names.
-         Product assignments are controlled in script.js.
-    =================================================== -->
-
-    <section class="collections-section section-padding" id="collections">
-
-      <div class="section-heading">
-
-        <div>
-          <span class="eyebrow">CURATED FOR YOUR SENSES</span>
-          <h2>Find your <em>fragrance.</em></h2>
-        </div>
-
-        <p>
-          Every personality has a signature.
-          Discover the collection that speaks to yours.
-        </p>
-
-      </div>
-
-      <div class="collection-grid">
-
-        <button class="collection-card collection-feminine"
-          data-collection="feminine">
-
-          <div class="collection-art collection-art-one">
-            <span class="collection-number">01</span>
-            <span class="collection-symbol">✳</span>
-          </div>
-
-          <div class="collection-info">
-            <div>
-              <span class="collection-kicker">SOFT · ELEGANT · EXPRESSIVE</span>
-              <h3>The Feminine Edit</h3>
-            </div>
-            <span class="collection-arrow">↗</span>
-          </div>
-
-        </button>
-
-
-        <button class="collection-card collection-sweet"
-          data-collection="sweet">
-
-          <div class="collection-art collection-art-two">
-            <span class="collection-number">02</span>
-            <span class="collection-symbol">❋</span>
-          </div>
-
-          <div class="collection-info">
-            <div>
-              <span class="collection-kicker">SWEET · WARM · INVITING</span>
-              <h3>Sweet Indulgence</h3>
-            </div>
-            <span class="collection-arrow">↗</span>
-          </div>
-
-        </button>
-
-
-        <button class="collection-card collection-signature"
-          data-collection="signature">
-
-          <div class="collection-art collection-art-three">
-            <span class="collection-number">03</span>
-            <span class="collection-symbol">✧</span>
-          </div>
-
-          <div class="collection-info">
-            <div>
-              <span class="collection-kicker">DISTINCTIVE · TIMELESS</span>
-              <h3>The Signature Collection</h3>
-            </div>
-            <span class="collection-arrow">↗</span>
-          </div>
-
-        </button>
-
-
-        <button class="collection-card collection-gifts"
-          data-collection="gifts">
-
-          <div class="collection-art collection-art-four">
-            <span class="collection-number">04</span>
-            <span class="collection-symbol">♡</span>
-          </div>
-
-          <div class="collection-info">
-            <div>
-              <span class="collection-kicker">THOUGHTFUL · MEMORABLE</span>
-              <h3>Gifts & Treasures</h3>
-            </div>
-            <span class="collection-arrow">↗</span>
-          </div>
-
-        </button>
-
-      </div>
-
-    </section>
-
-
-    <!-- ==================================================
-         SECTION 07: FEATURED FRAGRANCES
-         EDIT PRODUCTS IN script.js, NOT IN THIS HTML.
-    =================================================== -->
-
-    <section class="products-section section-padding" id="fragrances">
-
-      <div class="products-heading">
-
-        <div>
-          <span class="eyebrow">YOUR NEXT OBSESSION</span>
-          <h2>The fragrance <em>edit.</em></h2>
-          <p class="products-subtitle">
-            Find the scent that feels like you.
-          </p>
-        </div>
-
-        <div class="slider-controls">
-          <button class="slider-button" id="productPrev"
-            aria-label="Previous products">←</button>
-
-          <button class="slider-button" id="productNext"
-            aria-label="Next products">→</button>
-        </div>
-
-      </div>
-
-
-      <div class="product-filters" id="productFilters">
-
-        <button class="filter-button active" data-filter="all">
-          All Fragrances
-        </button>
-
-        <button class="filter-button" data-filter="feminine">
-          Feminine Edit
-        </button>
-
-        <button class="filter-button" data-filter="sweet">
-          Sweet Indulgence
-        </button>
-
-        <button class="filter-button" data-filter="signature">
-          Signature Scents
-        </button>
-
-        <button class="filter-button" data-filter="gifts">
-          Gifts
-        </button>
-
-      </div>
-
-
-      <div class="product-slider" id="productSlider">
-
-        <div class="product-track" id="productTrack">
-          <!-- PRODUCT CARDS GENERATED BY script.js -->
-        </div>
-
-      </div>
-
-      <div class="slider-progress">
-        <span id="sliderProgress"></span>
-      </div>
-
-      <p class="catalog-note">
-        Prices and availability are confirmed directly through WhatsApp.
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero" id="home">
+  <div class="container">
+    <div class="hero-content">
+      <span class="hero-label">Your signature scent awaits</span>
+
+      <h1>Redefining Your<br><em>Boundless Beauty.</em></h1>
+
+      <p>
+        Discover fragrances that express your personality,
+        elevate your presence, and leave a lasting impression.
       </p>
 
-    </section>
+      <a class="button" href="#collection">EXPLORE COLLECTION</a>
+      <a class="button button-light" href="#about">OUR STORY</a>
+    </div>
+  </div>
+</section>
 
+<!-- ANNOUNCEMENT -->
+<div class="quote-strip">
+  “You're never fully dressed without perfume.”
+</div>
 
-    <!-- ==================================================
-         SECTION 08: BRAND STORY
-    =================================================== -->
+<!-- ==================================================
+     FEATURED PERFUMES
+     CHANGE THE IMAGE FILES AND NAMES HERE
+================================================== -->
+<section class="section" id="featured">
+  <div class="container">
+    <div class="section-heading">
+      <small>Handpicked for you</small>
+      <h2>Featured Fragrances</h2>
+      <p>A little luxury, bottled just for you.</p>
+    </div>
 
-    <section class="story-section" id="our-story">
+    <div class="featured-track">
 
-      <div class="story-visual">
-
-        <div class="story-visual-inner">
-          <span class="story-ornament">M</span>
-
-          <div class="story-stamp">
-            <span>MIRA</span>
-            <span>CLASSIC EMPIRE</span>
-            <span class="stamp-star">✳</span>
-          </div>
-        </div>
-
+      <div class="featured-item">
+        <img src="assets/lattafa_yara_perfume-01.jpg" alt="Lattafa Yara perfume">
+        <p>Lattafa Yara</p>
       </div>
 
-      <div class="story-content">
-
-        <span class="eyebrow">THE ESSENCE OF MIRA</span>
-
-        <h2>
-          Beauty is personal.<br>
-          <em>Your scent should be, too.</em>
-        </h2>
-
-        <p>
-          We believe fragrance is more than something you wear.
-          It is a personal expression, a finishing touch, and
-          a quiet statement of who you are.
-        </p>
-
-        <p>
-          From everyday favourites to scents reserved for special
-          moments, explore a world where fragrance meets individuality.
-        </p>
-
-        <a href="#fragrances" class="button button-dark">
-          Explore the Collection <span>↗</span>
-        </a>
-
+      <div class="featured-item">
+        <img src="assets/khamrah_qahwa_perfume.jpg" alt="Khamrah Qahwa perfume">
+        <p>Khamrah Qahwa</p>
       </div>
 
-    </section>
-
-
-    <!-- ==================================================
-         SECTION 09: QUOTE CAROUSEL
-         EDIT QUOTES IN script.js.
-    =================================================== -->
-
-    <section class="quote-section section-padding" id="fragranceQuotes">
-
-      <div class="quote-topline">
-        <span class="eyebrow">A LITTLE FRAGRANCE PHILOSOPHY</span>
-        <span class="quote-counter" id="quoteCounter">01 / 06</span>
+      <div class="featured-item">
+        <img src="assets/9_pm_perfume-01.jpg" alt="9 PM perfume">
+        <p>9 PM</p>
       </div>
 
-      <div class="quote-carousel">
-
-        <button class="quote-arrow" id="quotePrev"
-          aria-label="Previous quote">←</button>
-
-        <div class="quote-content" aria-live="polite">
-
-          <span class="quote-mark">“</span>
-
-          <blockquote id="quoteText">
-            You're never fully dressed without perfume.
-          </blockquote>
-
-          <span class="quote-attribution">
-            THE MIRA EDIT
-          </span>
-
-        </div>
-
-        <button class="quote-arrow" id="quoteNext"
-          aria-label="Next quote">→</button>
-
+      <div class="featured-item">
+        <img src="assets/lattafa_eclaire_perfume-01.jpg" alt="Lattafa Eclaire perfume">
+        <p>Lattafa Eclaire</p>
       </div>
 
-      <div class="quote-dots" id="quoteDots"></div>
-
-    </section>
-
-
-    <!-- ==================================================
-         SECTION 10: PROMOTIONAL CTA
-    =================================================== -->
-
-    <section class="cta-section">
-
-      <div class="cta-decoration cta-decoration-left">✳</div>
-      <div class="cta-decoration cta-decoration-right">✧</div>
-
-      <div class="cta-content">
-
-        <span class="eyebrow">YOUR SIGNATURE AWAITS</span>
-
-        <h2>
-          Make every entrance<br>
-          <em>unforgettable.</em>
-        </h2>
-
-        <p>
-          Your next favourite fragrance might be one message away.
-        </p>
-
-        <a href="#" class="button button-light whatsapp-link">
-          Find Your Fragrance <span>↗</span>
-        </a>
-
+      <div class="featured-item">
+        <img src="assets/vanilla_kayali_perfume.jpg" alt="Vanilla Kayali perfume">
+        <p>Vanilla Kayali</p>
       </div>
 
-    </section>
-
-
-    <!-- ==================================================
-         SECTION 11: CONTACT
-    =================================================== -->
-
-    <section class="contact-section section-padding" id="contact">
-
-      <div class="contact-heading">
-
-        <span class="eyebrow">LET'S TALK FRAGRANCE</span>
-
-        <h2>
-          Your next scent<br>
-          <em>starts here.</em>
-        </h2>
-
-        <p>
-          Questions about a fragrance or ready to order?
-          Connect with Mira Classic Empire directly.
-        </p>
-
-      </div>
-
-      <div class="contact-card">
-
-        <span class="contact-icon">↗</span>
-
-        <span class="eyebrow">DIRECT ENQUIRIES & ORDERS</span>
-
-        <h3>Let's find your scent.</h3>
-
-        <p class="contact-number" id="contactNumber">
-          +234 702 642 8154
-        </p>
-
-        <a href="#" class="button button-primary whatsapp-link">
-          Chat With Us on WhatsApp
-        </a>
-
-        <span class="contact-response">
-          FRAGRANCE · BEAUTY · INDIVIDUALITY
-        </span>
-
-      </div>
-
-    </section>
-
-  </main>
-
-
-  <!-- ==================================================
-       SECTION 12: FOOTER
-  =================================================== -->
-
-  <footer class="site-footer">
-
-    <div class="footer-main">
-
-      <div class="footer-brand">
-
-        <a href="#home" class="footer-logo">
-          <img src="assets/logo.webp" alt="Mira Classic Empire">
-        </a>
-
-        <p>Redefining Your Boundless Beauty.</p>
-
-      </div>
-
-      <div class="footer-links">
-
-        <div>
-          <span class="footer-heading">EXPLORE</span>
-          <a href="#home">Home</a>
-          <a href="#collections">Collections</a>
-          <a href="#fragrances">Fragrances</a>
-        </div>
-
-        <div>
-          <span class="footer-heading">MIRA</span>
-          <a href="#our-story">Our Story</a>
-          <a href="#fragranceQuotes">Fragrance Journal</a>
-          <a href="#contact">Contact</a>
-        </div>
-
-      </div>
-
-      <div class="footer-cta">
-
-        <span class="footer-heading">FIND YOUR SIGNATURE</span>
-
-        <p>A little luxury is always in season.</p>
-
-        <a href="#" class="footer-whatsapp whatsapp-link">
-          Shop on WhatsApp ↗
-        </a>
-
+      <div class="featured-item">
+        <img src="assets/hayaati_gold_perfume.jpg" alt="Hayaati Gold perfume">
+        <p>Hayaati Gold</p>
       </div>
 
     </div>
+  </div>
+</section>
 
-    <div class="footer-bottom">
-      <span>© <span id="currentYear"></span> Mira Classic Empire.</span>
-      <span>MADE FOR THE ART OF BEING YOU.</span>
+<!-- ==================================================
+     PRODUCT CATALOG
+     EDIT PRODUCTS HERE
+     Image paths must match files in assets/
+================================================== -->
+<section class="section products" id="collection">
+  <div class="container">
+
+    <div class="section-heading">
+      <small>The fragrance collection</small>
+      <h2>Find Your Signature Scent</h2>
+      <p>Choose your favourite fragrance and order directly on WhatsApp.</p>
     </div>
 
-  </footer>
+    <div class="product-grid" id="productGrid"></div>
 
+  </div>
+</section>
 
-  <!-- ==================================================
-       PRODUCT QUICK-VIEW MODAL
-  =================================================== -->
+<!-- QUOTES -->
+<section class="section quotes">
+  <div class="container">
+    <div class="section-heading">
+      <small>A fragrance state of mind</small>
+      <h2>Life Is Better With Perfume</h2>
+    </div>
 
-  <div class="product-modal" id="productModal"
-    aria-hidden="true">
+    <div class="quote-grid">
 
-    <div class="modal-backdrop" data-close-modal></div>
-
-    <div class="modal-panel" role="dialog"
-      aria-modal="true"
-      aria-labelledby="modalProductName">
-
-      <button class="modal-close" id="modalClose"
-        aria-label="Close product details">×</button>
-
-      <div class="modal-image-area">
-
-        <button class="modal-image-arrow modal-image-prev"
-          id="modalImagePrev" aria-label="Previous image">←</button>
-
-        <img id="modalProductImage" src=""
-          alt="">
-
-        <button class="modal-image-arrow modal-image-next"
-          id="modalImageNext" aria-label="Next image">→</button>
-
-        <span class="modal-image-count" id="modalImageCount"></span>
-
+      <div class="quote-card">
+        <span>“</span>
+        <p>Perfume is the unseen, unforgettable, ultimate accessory.</p>
       </div>
 
-      <div class="modal-details">
-
-        <span class="eyebrow" id="modalCollection"></span>
-
-        <h2 id="modalProductName"></h2>
-
-        <p class="modal-price" id="modalProductPrice"></p>
-
-        <p id="modalProductDescription"></p>
-
-        <a href="#" id="modalOrderButton"
-          class="button button-primary">
-          Enquire on WhatsApp ↗
-        </a>
-
+      <div class="quote-card">
+        <span>“</span>
+        <p>Happiness is adding another perfume to your collection!</p>
       </div>
 
+      <div class="quote-card">
+        <span>“</span>
+        <p>Life is short. Smell iconic.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section class="section" id="about">
+  <div class="container about-content">
+
+    <img
+      class="about-image"
+      src="assets/mira-background.webp"
+      alt="Mira Classic Empire fragrance collection"
+    >
+
+    <div class="about-text">
+      <small>Welcome to Mira</small>
+      <h2>Let Your Fragrance Speak Before You Do.</h2>
+
+      <p>
+        At Mira Classic Empire, we believe a fragrance is more than
+        a scent. It is a statement, a memory, and a reflection of you.
+      </p>
+
+      <p>
+        Explore fragrances that complement your style and make
+        every moment feel a little more special.
+      </p>
+
+      <a class="button" href="#collection">DISCOVER YOUR SCENT</a>
     </div>
 
   </div>
+</section>
 
-
-  <!-- ==================================================
-       FLOATING WHATSAPP BUTTON
-  =================================================== -->
-
-  <a href="#" class="floating-whatsapp whatsapp-link"
-    aria-label="Contact Mira Classic Empire on WhatsApp">
-
-    <svg viewBox="0 0 32 32" aria-hidden="true">
-      <path fill="currentColor"
-        d="M16 3C8.9 3 3.1 8.7 3.1 15.8c0 2.3.6 4.5 1.8 6.5L3 29l6.9-1.8c1.9 1 4 1.5 6.1 1.5h.1c7.1 0 12.9-5.8 12.9-12.9C29 8.7 23.1 3 16 3zm0 23.5c-1.9 0-3.7-.5-5.3-1.4l-.4-.2-4.1 1.1 1.1-4-.3-.5a10.5 10.5 0 1 1 9 5zm5.8-7.9c-.3-.2-1.8-.9-2.1-1-.3-.1-.5-.2-.7.2-.2.3-.8 1-1 1.2-.2.2-.4.2-.7.1-.3-.2-1.3-.5-2.5-1.6-.9-.8-1.6-1.8-1.8-2.1-.2-.3 0-.5.1-.6l.5-.6c.2-.2.2-.3.3-.5.1-.2 0-.4 0-.5-.1-.2-.7-1.7-1-2.3-.3-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1.1 1.1-1.1 2.6s1.1 3 1.2 3.2c.1.2 2.2 3.4 5.4 4.7.8.3 1.4.5 1.9.6.8.3 1.6.2 2.2.1.7-.1 1.8-.7 2-1.4.3-.7.3-1.3.2-1.4-.1-.2-.3-.3-.6-.5z"/>
-    </svg>
-
+<!-- FINAL CALL TO ACTION -->
+<section class="final-cta">
+  <h2>Let Me Be Your Perfume Girl.</h2>
+  <p>Spoil yourself. Find a fragrance that feels like you.</p>
+  <a class="button" id="mainWhatsApp" href="#" target="_blank">
+    ORDER ON WHATSAPP
   </a>
+</section>
 
+<!-- FOOTER -->
+<footer>
+  <div class="container">
+    <strong>Mira Classic Empire</strong>
+    <span>Redefining Your Boundless Beauty.</span>
+    <p>Fragrance • Elegance • You</p>
+    <p>© <span id="year"></span> Mira Classic Empire. All rights reserved.</p>
+  </div>
+</footer>
 
-  <!-- ==================================================
-       JAVASCRIPT
-  =================================================== -->
+<!-- FLOATING WHATSAPP -->
+<a
+  class="whatsapp-float"
+  id="floatingWhatsApp"
+  href="#"
+  target="_blank"
+  aria-label="Chat with Mira Classic Empire on WhatsApp"
+>WhatsApp Us ↗</a>
 
-  <script src="script.js"></script>
+<script>
+/* ==================================================
+   MIRA CLASSIC EMPIRE SETTINGS
+   EDIT YOUR WHATSAPP NUMBER HERE
+   Use country code without + or spaces.
+================================================== */
+const WHATSAPP_NUMBER = "2347026428154";
+
+/* ==================================================
+   PRODUCT CATALOG
+   EDIT PRODUCT NAMES AND IMAGE PATHS HERE.
+   Use only filenames that exist in assets/.
+================================================== */
+const products = [
+  {
+    name: "9 PM",
+    image: "assets/9_pm_perfume-01.jpg"
+  },
+  {
+    name: "Be Tres Mora",
+    image: "assets/be_tres_mora_perfume.jpg"
+  },
+  {
+    name: "Be Tres Vanilla",
+    image: "assets/be_tres_vanilla_perfume.jpg"
+  },
+  {
+    name: "Cocoa Sunset",
+    image: "assets/cocoa_sunset_perfume-01.jpg"
+  },
+  {
+    name: "Elysia",
+    image: "assets/elysia_perfume.jpg"
+  },
+  {
+    name: "Elysia Red",
+    image: "assets/elysia_red_perfume.jpg"
+  },
+  {
+    name: "Gold Mousuf",
+    image: "assets/gold_mousuf_perfume.jpg"
+  },
+  {
+    name: "Hayaati Gold",
+    image: "assets/hayaati_gold_perfume.jpg"
+  },
+  {
+    name: "Hayaati Pink",
+    image: "assets/hayaati_pink_perfume.jpg"
+  },
+  {
+    name: "Khamrah Qahwa",
+    image: "assets/khamrah_qahwa_perfume.jpg"
+  },
+  {
+    name: "Khamrah Waha",
+    image: "assets/khamrah_waha_perfume.jpg"
+  },
+  {
+    name: "Lattafa Eclaire",
+    image: "assets/lattafa_eclaire_perfume-01.jpg"
+  },
+  {
+    name: "Lattafa Yara",
+    image: "assets/lattafa_yara_perfume-01.jpg"
+  },
+  {
+    name: "Pink Mousuf",
+    image: "assets/pink_mousuf_perfume.jpg"
+  },
+  {
+    name: "Redrose Kayali",
+    image: "assets/redrose_kayali_perfume.jpg"
+  },
+  {
+    name: "Sugar Candy",
+    image: "assets/sugar_candy_perfume.jpg"
+  },
+  {
+    name: "Sugar Regular",
+    image: "assets/sugar_regular_perfume.jpg"
+  },
+  {
+    name: "Sweet Touch",
+    image: "assets/sweet_touch_perfume-01.jpg"
+  },
+  {
+    name: "Vanilla Kayali",
+    image: "assets/vanilla_kayali_perfume.jpg"
+  }
+];
+
+/* ==================================================
+   DISPLAY PRODUCTS
+   No need to edit below unless changing functionality.
+================================================== */
+const productGrid = document.getElementById("productGrid");
+
+products.forEach(product => {
+  const card = document.createElement("article");
+  card.className = "product-card";
+
+  const image = document.createElement("img");
+  image.src = product.image;
+  image.alt = product.name;
+  image.loading = "lazy";
+
+  image.onerror = function() {
+    this.style.display = "none";
+  };
+
+  const info = document.createElement("div");
+  info.className = "product-info";
+
+  const name = document.createElement("h3");
+  name.textContent = product.name;
+
+  const description = document.createElement("p");
+  description.textContent = "A fragrance made to be remembered.";
+
+  const button = document.createElement("a");
+  button.className = "order-button";
+  button.textContent = "DM FOR PRICE ↗";
+  button.href =
+    "https://wa.me/" + WHATSAPP_NUMBER +
+    "?text=" + encodeURIComponent(
+      "Hello Mira Classic Empire! I'm interested in " +
+      product.name + ". Please tell me the price."
+    );
+  button.target = "_blank";
+  button.rel = "noopener";
+
+  info.append(name, description, button);
+  card.append(image, info);
+  productGrid.appendChild(card);
+});
+
+/* WHATSAPP LINKS */
+const generalMessage = encodeURIComponent(
+  "Hello Mira Classic Empire! I'd like to explore your perfume collection."
+);
+
+document.getElementById("mainWhatsApp").href =
+  "https://wa.me/" + WHATSAPP_NUMBER + "?text=" + generalMessage;
+
+document.getElementById("floatingWhatsApp").href =
+  "https://wa.me/" + WHATSAPP_NUMBER + "?text=" + generalMessage;
+
+/* AUTOMATIC FOOTER YEAR */
+document.getElementById("year").textContent = new Date().getFullYear();
+</script>
 
 </body>
 </html>
