@@ -3,21 +3,23 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="theme-color" content="#4A0E17">
-<title>Mira Classic Empire | Perfume Store</title>
+<meta name="theme-color" content="#0B0A0D">
+<title>Mira Classic Empire | Luxury Fragrances</title>
 
 <style>
-/* ==================================================
-   MIRA CLASSIC EMPIRE
-   EDIT COLORS HERE
-================================================== */
+/* =========================================
+   EDITABLE COLORS
+========================================= */
 :root {
   --burgundy: #4A0E17;
+  --burgundy-light: #70202D;
   --violet: #261732;
-  --sage: #AEA989;
-  --cream: #FAF6F0;
-  --white: #FFFFFF;
-  --text: #302329;
+  --gold: #D4AF72;
+  --background: #0B0A0D;
+  --surface: #151217;
+  --surface-light: #201A21;
+  --text: #F5F0ED;
+  --muted: #B8ADB5;
 }
 
 /* BASIC STYLES */
@@ -32,26 +34,21 @@ html {
 }
 
 body {
-  font-family: Arial, sans-serif;
-  background: var(--cream);
+  background: var(--background);
   color: var(--text);
+  font-family: Arial, sans-serif;
   line-height: 1.6;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
 }
 
 img {
   display: block;
   width: 100%;
   object-fit: cover;
-}
-
-a {
-  text-decoration: none;
-  color: inherit;
-}
-
-button {
-  font: inherit;
-  cursor: pointer;
 }
 
 .container {
@@ -61,7 +58,7 @@ button {
 }
 
 .section {
-  padding: 65px 0;
+  padding: 60px 0;
 }
 
 .section-heading {
@@ -70,209 +67,166 @@ button {
 }
 
 .section-heading small {
-  color: var(--burgundy);
+  color: var(--gold);
   text-transform: uppercase;
   letter-spacing: 3px;
-  font-size: 11px;
+  font-size: 10px;
   font-weight: bold;
 }
 
 .section-heading h2 {
+  color: var(--text);
   font-family: Georgia, serif;
-  font-size: clamp(27px, 5vw, 40px);
-  color: var(--burgundy);
-  margin-top: 7px;
   font-weight: normal;
+  font-size: clamp(28px, 5vw, 40px);
+  margin-top: 6px;
 }
 
 .section-heading p {
+  color: var(--muted);
   font-size: 13px;
-  margin-top: 8px;
-  opacity: .75;
-}
-
-/* HEADER */
-header {
-  background: var(--cream);
-  border-bottom: 1px solid #e8dcd8;
-  position: sticky;
-  top: 0;
-  z-index: 100;
-}
-
-.navbar {
-  min-height: 76px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 15px;
-}
-
-.brand {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-}
-
-.brand img {
-  width: 45px;
-  height: 45px;
-  border-radius: 50%;
-  object-fit: contain;
-}
-
-.brand-name {
-  color: var(--burgundy);
-  font-family: Georgia, serif;
-  font-size: 18px;
-  line-height: 1.2;
-}
-
-.brand-name span {
-  display: block;
-  font-family: Arial, sans-serif;
-  font-size: 9px;
-  letter-spacing: 2px;
-  margin-top: 4px;
-}
-
-.nav-links {
-  display: flex;
-  align-items: center;
-  gap: 22px;
-  font-size: 12px;
-}
-
-.nav-links a:hover {
-  color: var(--burgundy);
-}
-
-.nav-order {
-  background: var(--burgundy);
-  color: white;
-  padding: 11px 16px;
-  border-radius: 3px;
-}
-
-/* HERO */
-.hero {
-  min-height: 490px;
-  display: flex;
-  align-items: center;
-  background:
-    linear-gradient(90deg, rgba(30, 10, 17, .85), rgba(30, 10, 17, .28)),
-    url("assets/mira-background.webp") center/cover no-repeat;
-  color: white;
-}
-
-.hero-content {
-  max-width: 600px;
-  padding: 70px 0;
-}
-
-.hero-label {
-  color: #e2c7a3;
-  letter-spacing: 4px;
-  text-transform: uppercase;
-  font-size: 11px;
-}
-
-.hero h1 {
-  font-family: Georgia, serif;
-  font-weight: normal;
-  font-size: clamp(40px, 8vw, 68px);
-  line-height: 1.1;
-  margin: 20px 0;
-}
-
-.hero h1 em {
-  color: #e2c7a3;
-}
-
-.hero p {
-  max-width: 390px;
-  font-size: 14px;
-  color: #f4e9e6;
-  margin-bottom: 27px;
+  margin-top: 6px;
 }
 
 .button {
   display: inline-block;
-  padding: 13px 22px;
-  border-radius: 3px;
   background: var(--burgundy);
   color: white;
-  font-size: 12px;
+  padding: 12px 21px;
+  font-size: 11px;
+  letter-spacing: 1px;
   border: 1px solid var(--burgundy);
+  border-radius: 3px;
   transition: .25s;
 }
 
 .button:hover {
-  background: var(--violet);
-  border-color: var(--violet);
+  background: var(--burgundy-light);
+  border-color: var(--gold);
   transform: translateY(-2px);
 }
 
-.button-light {
-  background: transparent;
-  border-color: #e2c7a3;
-  margin-left: 8px;
+/* =========================================
+   MINIMAL HEADER — NO NAVIGATION
+========================================= */
+header {
+  background: var(--background);
+  border-bottom: 1px solid #ffffff12;
 }
 
-/* ANNOUNCEMENT STRIP */
-.quote-strip {
-  background: var(--burgundy);
-  color: white;
-  text-align: center;
-  padding: 15px 10px;
+.header-inner {
+  min-height: 68px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.brand {
+  color: var(--gold);
   font-family: Georgia, serif;
-  font-size: 15px;
+  font-size: 20px;
+  letter-spacing: 2px;
+  text-align: center;
+}
+
+/* =========================================
+   HERO
+   Background: assets/mira-background.webp
+========================================= */
+.hero {
+  min-height: 490px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 45px 20px;
+
+  background:
+    linear-gradient(
+      180deg,
+      rgba(11, 10, 13, .18),
+      rgba(11, 10, 13, .68)
+    ),
+    url("assets/mira-background.webp") center/cover no-repeat;
+}
+
+.hero-content {
+  max-width: 600px;
+  color: white;
+}
+
+.hero p {
+  font-family: "Brush Script MT", "Segoe Script", cursive;
+  font-size: clamp(31px, 6vw, 49px);
+  line-height: 1.25;
+  text-shadow: 0 2px 14px #0009;
+  margin-bottom: 24px;
+}
+
+.hero .button {
+  background: var(--burgundy);
+  border-color: var(--gold);
+}
+
+/* PROMO STRIP */
+.promo-strip {
+  text-align: center;
+  padding: 13px 10px;
+  background: var(--burgundy);
+  color: #F4E6E1;
+  font-family: Georgia, serif;
+  font-size: 14px;
   letter-spacing: .5px;
 }
 
-/* FEATURED COLLECTION */
+/* =========================================
+   FEATURED FRAGRANCES
+========================================= */
 .featured-track {
   display: flex;
   gap: 16px;
   overflow-x: auto;
-  padding: 5px 0 18px;
+  padding-bottom: 15px;
   scrollbar-width: thin;
-  scrollbar-color: var(--sage) transparent;
+  scrollbar-color: var(--burgundy-light) transparent;
 }
 
 .featured-item {
-  flex: 0 0 170px;
+  flex: 0 0 165px;
   text-align: center;
 }
 
 .featured-item img {
-  height: 190px;
-  border-radius: 5px;
-  background: #eee5df;
+  height: 180px;
   object-fit: cover;
+  background: var(--surface-light);
+  border-radius: 4px;
+  border: 1px solid #ffffff10;
 }
 
 .featured-item p {
+  color: var(--gold);
   font-family: Georgia, serif;
-  color: var(--burgundy);
   font-size: 14px;
-  margin-top: 10px;
+  margin-top: 9px;
 }
 
-/* PRODUCT CATALOG */
+/* =========================================
+   PRODUCT CATALOG
+========================================= */
 .products {
-  background: #fffdf9;
+  background: #100D12;
 }
 
 .product-grid {
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: 20px;
+  gap: 18px;
 }
 
 .product-card {
-  background: white;
-  border: 1px solid #eee5df;
+  background: var(--surface);
+  border: 1px solid #ffffff12;
   border-radius: 5px;
   overflow: hidden;
   transition: .25s;
@@ -280,175 +234,181 @@ header {
 
 .product-card:hover {
   transform: translateY(-4px);
-  box-shadow: 0 10px 25px #4a0e1710;
+  border-color: #70202D;
+  box-shadow: 0 10px 25px #0004;
 }
 
 .product-card img {
-  height: 220px;
-  background: #f0e8e2;
-  object-fit: cover;
+  height: 215px;
+  background: var(--surface-light);
 }
 
 .product-info {
-  padding: 14px;
+  padding: 13px;
 }
 
 .product-info h3 {
-  color: var(--burgundy);
+  color: var(--text);
   font-family: Georgia, serif;
-  font-size: 16px;
+  font-size: 15px;
   font-weight: normal;
 }
 
 .product-info p {
+  color: var(--muted);
   font-size: 11px;
-  opacity: .7;
   margin: 5px 0 12px;
 }
 
 .order-button {
   display: block;
   text-align: center;
+  padding: 9px;
   background: var(--burgundy);
   color: white;
   border-radius: 3px;
-  padding: 10px;
-  font-size: 11px;
+  font-size: 10px;
+  letter-spacing: .5px;
 }
 
 .order-button:hover {
-  background: var(--violet);
+  background: var(--burgundy-light);
 }
 
-/* QUOTES */
+/* =========================================
+   FRAGRANCE QUOTES
+========================================= */
 .quotes {
-  background: #f0e8e2;
+  background: var(--background);
 }
 
 .quote-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 18px;
+  gap: 17px;
 }
 
 .quote-card {
-  background: var(--cream);
-  border: 1px solid #e6d9d1;
-  padding: 27px 20px;
+  padding: 25px 18px;
   text-align: center;
+  background: var(--surface);
+  border: 1px solid #ffffff12;
   border-radius: 4px;
 }
 
 .quote-card span {
-  color: var(--sage);
-  font-size: 30px;
+  color: var(--gold);
   font-family: Georgia, serif;
+  font-size: 30px;
 }
 
 .quote-card p {
-  color: var(--burgundy);
+  color: #E9DDE4;
   font-family: Georgia, serif;
-  font-size: 17px;
-  margin-top: 8px;
+  font-size: 16px;
 }
 
-/* ABOUT */
+/* =========================================
+   ABOUT MIRA
+========================================= */
 .about-content {
   display: grid;
   grid-template-columns: 1fr 1fr;
   align-items: center;
-  gap: 40px;
+  gap: 35px;
 }
 
 .about-image {
-  height: 330px;
-  object-fit: cover;
+  height: 320px;
   border-radius: 4px;
-  background: #eee5df;
+  border: 1px solid #ffffff12;
 }
 
 .about-text small {
-  color: var(--burgundy);
+  color: var(--gold);
+  font-size: 10px;
   letter-spacing: 3px;
   text-transform: uppercase;
-  font-size: 11px;
 }
 
 .about-text h2 {
+  color: var(--text);
   font-family: Georgia, serif;
   font-weight: normal;
   font-size: 34px;
-  color: var(--burgundy);
   line-height: 1.2;
-  margin: 12px 0 18px;
+  margin: 12px 0 16px;
 }
 
 .about-text p {
+  color: var(--muted);
   font-size: 13px;
-  margin-bottom: 20px;
-  opacity: .8;
+  margin-bottom: 16px;
 }
 
-/* FINAL CALL TO ACTION */
+/* =========================================
+   FINAL CALL TO ACTION
+========================================= */
 .final-cta {
-  background: var(--burgundy);
-  color: white;
+  padding: 50px 20px;
   text-align: center;
-  padding: 55px 20px;
+  background:
+    linear-gradient(135deg, var(--burgundy), #21111E);
+  color: white;
 }
 
 .final-cta h2 {
   font-family: Georgia, serif;
-  font-size: clamp(28px, 5vw, 40px);
+  font-size: clamp(28px, 5vw, 39px);
   font-weight: normal;
 }
 
 .final-cta p {
+  color: #E4D7DE;
   font-size: 13px;
-  margin: 12px 0 23px;
-  color: #eadde0;
+  margin: 10px 0 22px;
 }
 
 .final-cta .button {
-  background: var(--cream);
-  color: var(--burgundy);
-  border-color: var(--cream);
+  background: var(--gold);
+  border-color: var(--gold);
+  color: #21111A;
 }
 
 /* FOOTER */
 footer {
-  background: #211017;
-  color: #e8d9d8;
-  padding: 30px 0;
+  background: #080709;
+  color: var(--muted);
   text-align: center;
+  padding: 27px 10px;
   font-size: 11px;
 }
 
 footer strong {
   display: block;
+  color: var(--gold);
   font-family: Georgia, serif;
   font-size: 19px;
   font-weight: normal;
-  margin-bottom: 5px;
+  letter-spacing: 2px;
 }
 
 footer p {
-  margin-top: 7px;
-  opacity: .75;
+  margin-top: 6px;
 }
 
-/* WHATSAPP FLOATING BUTTON */
+/* FLOATING WHATSAPP */
 .whatsapp-float {
   position: fixed;
-  right: 18px;
-  bottom: 18px;
+  right: 16px;
+  bottom: 16px;
   z-index: 99;
-  background: #247b48;
+  background: #247B48;
   color: white;
-  padding: 13px 17px;
+  padding: 12px 16px;
   border-radius: 30px;
   font-size: 12px;
-  box-shadow: 0 4px 18px #0002;
+  box-shadow: 0 4px 15px #0005;
 }
 
 /* MOBILE */
@@ -462,61 +422,27 @@ footer p {
     height: 190px;
   }
 
+  .quote-grid {
+    grid-template-columns: 1fr;
+  }
+
   .about-content {
     gap: 24px;
-  }
-
-  .nav-links {
-    gap: 12px;
-  }
-
-  .nav-links a:not(.nav-order) {
-    display: none;
   }
 }
 
 @media (max-width: 500px) {
   .section {
-    padding: 48px 0;
-  }
-
-  .navbar {
-    min-height: 66px;
-  }
-
-  .brand img {
-    width: 38px;
-    height: 38px;
-  }
-
-  .brand-name {
-    font-size: 15px;
-  }
-
-  .nav-order {
-    padding: 10px 12px;
-    font-size: 11px;
+    padding: 45px 0;
   }
 
   .hero {
-    min-height: 430px;
-    background-position: 60% center;
-  }
-
-  .hero-content {
-    padding: 55px 0;
-  }
-
-  .hero h1 {
-    font-size: 43px;
+    min-height: 420px;
+    background-position: center;
   }
 
   .hero p {
-    font-size: 13px;
-  }
-
-  .button {
-    padding: 12px 15px;
+    font-size: 35px;
   }
 
   .featured-item {
@@ -524,7 +450,7 @@ footer p {
   }
 
   .featured-item img {
-    height: 165px;
+    height: 160px;
   }
 
   .product-card img {
@@ -532,19 +458,7 @@ footer p {
   }
 
   .product-info {
-    padding: 11px;
-  }
-
-  .product-info h3 {
-    font-size: 14px;
-  }
-
-  .quote-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .quote-card {
-    padding: 20px;
+    padding: 10px;
   }
 
   .about-content {
@@ -552,7 +466,7 @@ footer p {
   }
 
   .about-image {
-    height: 260px;
+    height: 250px;
   }
 
   .about-text h2 {
@@ -564,67 +478,35 @@ footer p {
 
 <body>
 
-<!-- ==================================================
-     HEADER
-     EDIT BRAND NAME OR LOGO HERE
-================================================== -->
+<!-- MINIMAL HEADER -->
 <header>
-  <div class="container navbar">
-    <a href="#" class="brand">
-      <img src="assets/logo.webp" alt="Mira Classic Empire logo">
-      <div class="brand-name">
-        Mira Classic Empire
-        <span>FRAGRANCE • ELEGANCE • YOU</span>
-      </div>
-    </a>
-
-    <nav class="nav-links">
-      <a href="#home">Home</a>
-      <a href="#collection">Collection</a>
-      <a href="#about">About</a>
-      <a class="nav-order" href="#collection">Shop Perfumes</a>
-    </nav>
+  <div class="container header-inner">
+    <a href="#" class="brand">MIRA CLASSIC EMPIRE</a>
   </div>
 </header>
 
-<!-- HERO -->
+<!-- HERO: SHORT CURSIVE COPY -->
 <section class="hero" id="home">
-  <div class="container">
-    <div class="hero-content">
-      <span class="hero-label">Your signature scent awaits</span>
-
-      <h1>Redefining Your<br><em>Boundless Beauty.</em></h1>
-
-      <p>
-        Discover fragrances that express your personality,
-        elevate your presence, and leave a lasting impression.
-      </p>
-
-      <a class="button" href="#collection">EXPLORE COLLECTION</a>
-      <a class="button button-light" href="#about">OUR STORY</a>
-    </div>
+  <div class="hero-content">
+    <p>Your scent.<br>Your signature.</p>
+    <a href="#collection" class="button">DISCOVER YOUR FRAGRANCE</a>
   </div>
 </section>
 
-<!-- ANNOUNCEMENT -->
-<div class="quote-strip">
+<div class="promo-strip">
   “You're never fully dressed without perfume.”
 </div>
 
-<!-- ==================================================
-     FEATURED PERFUMES
-     CHANGE THE IMAGE FILES AND NAMES HERE
-================================================== -->
+<!-- FEATURED PERFUMES -->
 <section class="section" id="featured">
   <div class="container">
     <div class="section-heading">
-      <small>Handpicked for you</small>
-      <h2>Featured Fragrances</h2>
-      <p>A little luxury, bottled just for you.</p>
+      <small>Selected for you</small>
+      <h2>Signature Fragrances</h2>
+      <p>Find the scent that feels like you.</p>
     </div>
 
     <div class="featured-track">
-
       <div class="featured-item">
         <img src="assets/lattafa_yara_perfume-01.jpg" alt="Lattafa Yara perfume">
         <p>Lattafa Yara</p>
@@ -654,27 +536,20 @@ footer p {
         <img src="assets/hayaati_gold_perfume.jpg" alt="Hayaati Gold perfume">
         <p>Hayaati Gold</p>
       </div>
-
     </div>
   </div>
 </section>
 
-<!-- ==================================================
-     PRODUCT CATALOG
-     EDIT PRODUCTS HERE
-     Image paths must match files in assets/
-================================================== -->
+<!-- PRODUCT CATALOG -->
 <section class="section products" id="collection">
   <div class="container">
-
     <div class="section-heading">
-      <small>The fragrance collection</small>
-      <h2>Find Your Signature Scent</h2>
-      <p>Choose your favourite fragrance and order directly on WhatsApp.</p>
+      <small>The collection</small>
+      <h2>Find Your Favourite</h2>
+      <p>Beautiful fragrances, ready to be discovered.</p>
     </div>
 
     <div class="product-grid" id="productGrid"></div>
-
   </div>
 </section>
 
@@ -683,11 +558,10 @@ footer p {
   <div class="container">
     <div class="section-heading">
       <small>A fragrance state of mind</small>
-      <h2>Life Is Better With Perfume</h2>
+      <h2>Wear Your Essence</h2>
     </div>
 
     <div class="quote-grid">
-
       <div class="quote-card">
         <span>“</span>
         <p>Perfume is the unseen, unforgettable, ultimate accessory.</p>
@@ -702,7 +576,6 @@ footer p {
         <span>“</span>
         <p>Life is short. Smell iconic.</p>
       </div>
-
     </div>
   </div>
 </section>
@@ -710,210 +583,139 @@ footer p {
 <!-- ABOUT -->
 <section class="section" id="about">
   <div class="container about-content">
-
     <img
       class="about-image"
       src="assets/mira-background.webp"
       alt="Mira Classic Empire fragrance collection"
+      loading="lazy"
     >
 
     <div class="about-text">
       <small>Welcome to Mira</small>
-      <h2>Let Your Fragrance Speak Before You Do.</h2>
+      <h2>Let Your Fragrance Speak.</h2>
 
       <p>
-        At Mira Classic Empire, we believe a fragrance is more than
-        a scent. It is a statement, a memory, and a reflection of you.
+        At Mira Classic Empire, we believe fragrance is more than
+        a scent. It is a statement, a memory, and an expression
+        of your individuality.
       </p>
 
       <p>
-        Explore fragrances that complement your style and make
-        every moment feel a little more special.
+        Discover fragrances that complement your style and make
+        every moment a little more memorable.
       </p>
 
-      <a class="button" href="#collection">DISCOVER YOUR SCENT</a>
+      <a href="#collection" class="button">EXPLORE THE COLLECTION</a>
     </div>
-
   </div>
 </section>
 
-<!-- FINAL CALL TO ACTION -->
+<!-- WHATSAPP CTA -->
 <section class="final-cta">
-  <h2>Let Me Be Your Perfume Girl.</h2>
-  <p>Spoil yourself. Find a fragrance that feels like you.</p>
-  <a class="button" id="mainWhatsApp" href="#" target="_blank">
+  <h2>Your Next Favourite Scent Awaits.</h2>
+  <p>Choose your fragrance and let us help you find your signature.</p>
+
+  <a href="#" class="button" id="mainWhatsApp" target="_blank">
     ORDER ON WHATSAPP
   </a>
 </section>
 
 <!-- FOOTER -->
 <footer>
-  <div class="container">
-    <strong>Mira Classic Empire</strong>
-    <span>Redefining Your Boundless Beauty.</span>
-    <p>Fragrance • Elegance • You</p>
-    <p>© <span id="year"></span> Mira Classic Empire. All rights reserved.</p>
-  </div>
+  <strong>MIRA CLASSIC EMPIRE</strong>
+  <p>Fragrance • Elegance • You</p>
+  <p>© <span id="year"></span> Mira Classic Empire. All rights reserved.</p>
 </footer>
 
-<!-- FLOATING WHATSAPP -->
-<a
-  class="whatsapp-float"
-  id="floatingWhatsApp"
-  href="#"
-  target="_blank"
-  aria-label="Chat with Mira Classic Empire on WhatsApp"
->WhatsApp Us ↗</a>
+<a href="#" class="whatsapp-float" id="floatingWhatsApp" target="_blank">
+  WhatsApp Us ↗
+</a>
 
 <script>
-/* ==================================================
-   MIRA CLASSIC EMPIRE SETTINGS
-   EDIT YOUR WHATSAPP NUMBER HERE
-   Use country code without + or spaces.
-================================================== */
+/* =========================================
+   STORE SETTINGS
+========================================= */
 const WHATSAPP_NUMBER = "2347026428154";
 
-/* ==================================================
+/* =========================================
    PRODUCT CATALOG
-   EDIT PRODUCT NAMES AND IMAGE PATHS HERE.
-   Use only filenames that exist in assets/.
-================================================== */
+   Edit product names and image paths here.
+========================================= */
 const products = [
-  {
-    name: "9 PM",
-    image: "assets/9_pm_perfume-01.jpg"
-  },
-  {
-    name: "Be Tres Mora",
-    image: "assets/be_tres_mora_perfume.jpg"
-  },
-  {
-    name: "Be Tres Vanilla",
-    image: "assets/be_tres_vanilla_perfume.jpg"
-  },
-  {
-    name: "Cocoa Sunset",
-    image: "assets/cocoa_sunset_perfume-01.jpg"
-  },
-  {
-    name: "Elysia",
-    image: "assets/elysia_perfume.jpg"
-  },
-  {
-    name: "Elysia Red",
-    image: "assets/elysia_red_perfume.jpg"
-  },
-  {
-    name: "Gold Mousuf",
-    image: "assets/gold_mousuf_perfume.jpg"
-  },
-  {
-    name: "Hayaati Gold",
-    image: "assets/hayaati_gold_perfume.jpg"
-  },
-  {
-    name: "Hayaati Pink",
-    image: "assets/hayaati_pink_perfume.jpg"
-  },
-  {
-    name: "Khamrah Qahwa",
-    image: "assets/khamrah_qahwa_perfume.jpg"
-  },
-  {
-    name: "Khamrah Waha",
-    image: "assets/khamrah_waha_perfume.jpg"
-  },
-  {
-    name: "Lattafa Eclaire",
-    image: "assets/lattafa_eclaire_perfume-01.jpg"
-  },
-  {
-    name: "Lattafa Yara",
-    image: "assets/lattafa_yara_perfume-01.jpg"
-  },
-  {
-    name: "Pink Mousuf",
-    image: "assets/pink_mousuf_perfume.jpg"
-  },
-  {
-    name: "Redrose Kayali",
-    image: "assets/redrose_kayali_perfume.jpg"
-  },
-  {
-    name: "Sugar Candy",
-    image: "assets/sugar_candy_perfume.jpg"
-  },
-  {
-    name: "Sugar Regular",
-    image: "assets/sugar_regular_perfume.jpg"
-  },
-  {
-    name: "Sweet Touch",
-    image: "assets/sweet_touch_perfume-01.jpg"
-  },
-  {
-    name: "Vanilla Kayali",
-    image: "assets/vanilla_kayali_perfume.jpg"
-  }
+  { name: "9 PM", image: "9_pm_perfume-01.jpg" },
+  { name: "Be Tres Mora", image: "be_tres_mora_perfume.jpg" },
+  { name: "Be Tres Vanilla", image: "be_tres_vanilla_perfume.jpg" },
+  { name: "Cocoa Sunset", image: "cocoa_sunset_perfume-01.jpg" },
+  { name: "Elysia", image: "elysia_perfume.jpg" },
+  { name: "Elysia Red", image: "elysia_red_perfume.jpg" },
+  { name: "Gold Mousuf", image: "gold_mousuf_perfume.jpg" },
+  { name: "Hayaati Gold", image: "hayaati_gold_perfume.jpg" },
+  { name: "Hayaati Pink", image: "hayaati_pink_perfume.jpg" },
+  { name: "Khamrah Qahwa", image: "khamrah_qahwa_perfume.jpg" },
+  { name: "Khamrah Waha", image: "khamrah_waha_perfume.jpg" },
+  { name: "Lattafa Eclaire", image: "lattafa_eclaire_perfume-01.jpg" },
+  { name: "Lattafa Yara", image: "lattafa_yara_perfume-01.jpg" },
+  { name: "Pink Mousuf", image: "pink_mousuf_perfume.jpg" },
+  { name: "Redrose Kayali", image: "redrose_kayali_perfume.jpg" },
+  { name: "Sugar Candy", image: "sugar_candy_perfume.jpg" },
+  { name: "Sugar Regular", image: "sugar_regular_perfume.jpg" },
+  { name: "Sweet Touch", image: "sweet_touch_perfume-03.jpg" },
+  { name: "Vanilla Kayali", image: "vanilla_kayali_perfume.jpg" }
 ];
 
-/* ==================================================
-   DISPLAY PRODUCTS
-   No need to edit below unless changing functionality.
-================================================== */
-const productGrid = document.getElementById("productGrid");
+/* =========================================
+   DISPLAY PRODUCTS AUTOMATICALLY
+========================================= */
+const grid = document.getElementById("productGrid");
 
 products.forEach(product => {
   const card = document.createElement("article");
   card.className = "product-card";
 
   const image = document.createElement("img");
-  image.src = product.image;
+  image.src = "assets/" + product.image;
   image.alt = product.name;
   image.loading = "lazy";
-
-  image.onerror = function() {
-    this.style.display = "none";
-  };
 
   const info = document.createElement("div");
   info.className = "product-info";
 
-  const name = document.createElement("h3");
-  name.textContent = product.name;
+  const title = document.createElement("h3");
+  title.textContent = product.name;
 
   const description = document.createElement("p");
-  description.textContent = "A fragrance made to be remembered.";
+  description.textContent = "DM for price";
 
   const button = document.createElement("a");
   button.className = "order-button";
-  button.textContent = "DM FOR PRICE ↗";
+  button.textContent = "ENQUIRE ON WHATSAPP ↗";
   button.href =
     "https://wa.me/" + WHATSAPP_NUMBER +
     "?text=" + encodeURIComponent(
       "Hello Mira Classic Empire! I'm interested in " +
       product.name + ". Please tell me the price."
     );
+
   button.target = "_blank";
   button.rel = "noopener";
 
-  info.append(name, description, button);
+  info.append(title, description, button);
   card.append(image, info);
-  productGrid.appendChild(card);
+  grid.appendChild(card);
 });
 
-/* WHATSAPP LINKS */
-const generalMessage = encodeURIComponent(
+/* GENERAL WHATSAPP LINKS */
+const message = encodeURIComponent(
   "Hello Mira Classic Empire! I'd like to explore your perfume collection."
 );
 
 document.getElementById("mainWhatsApp").href =
-  "https://wa.me/" + WHATSAPP_NUMBER + "?text=" + generalMessage;
+  "https://wa.me/" + WHATSAPP_NUMBER + "?text=" + message;
 
 document.getElementById("floatingWhatsApp").href =
-  "https://wa.me/" + WHATSAPP_NUMBER + "?text=" + generalMessage;
+  "https://wa.me/" + WHATSAPP_NUMBER + "?text=" + message;
 
-/* AUTOMATIC FOOTER YEAR */
+/* FOOTER YEAR */
 document.getElementById("year").textContent = new Date().getFullYear();
 </script>
 
